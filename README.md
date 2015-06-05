@@ -44,6 +44,7 @@ ej:=ezjson.NewJsonFile("a.json")
 fmt.Println(ej.Int("ID"))  // 2
 fmt.Println(ej.String("IP"))  // 12.12.12.12
 fmt.Println(ej.Slice("Sensors::Types::types")) // ["temp","C"]
+fmt.Println(ej.Slice("Sensors.Types.types")) // ["temp","C"] if the key has `.`, so just use :: as the seperate.
 fmt.Println(sj.Slice("Controls"))  // ["LCD","Relay"]
 fmt.Println(sj.String("Processes[0].Name"))  // A
 ```
